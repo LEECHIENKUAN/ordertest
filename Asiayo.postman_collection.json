@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "200ddad3-3200-4f9d-8386-d3aac636da8d",
+		"name": "個人主機",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "382816"
+	},
+	"item": [
+		{
+			"name": "新增訂單",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\": \"A0000001\",\n\"name\": \"Melody Holiday Inn\", \n\"address\": {\n\"city\": \"taipei-city\",\n\"district\": \"da-an-district\", \n\"street\": \"fuxing-south-road\"\n},\n\"price\": \"2050\", \"currency\": \"TWD\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "查詢訂單",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders/A0000001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders",
+						"A0000001"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

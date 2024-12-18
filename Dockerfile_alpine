@@ -1,0 +1,18 @@
+FROM php:fpm-alpine3.19
+
+RUN apk update && apk add --no-cache tzdata nginx \
+    && cp /usr/share/zoneinfo/Asia/Taipei /etc/localtime \
+    && apk del tzdata
+
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
+    php composer-setup.php && \
+    php -r "unlink('composer-setup.php');" && \
+    mv composer.phar /usr/local/bin/composer
+
+COPY . /var/www/html
+COPY docker/nginx/website.conf /etc/nginx/conf.d/website.conf
+COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
+
+RUN chmod 777 /var/www/html/storage -R
+
+ENTRYPOINT ["sh", "/var/www/html/docker/entrypoint.sh"]
