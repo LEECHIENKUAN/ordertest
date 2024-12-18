@@ -88,7 +88,7 @@ CREATE DATABASE asayo CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
 結果
-![測試結果]([picture or gif url](https://raw.githubusercontent.com/LEECHIENKUAN/ordertest/refs/heads/main/test_res.png))
+![測試結果](https://raw.githubusercontent.com/LEECHIENKUAN/ordertest/refs/heads/main/test_res.png)
 
 
 ## SOLID 與設計模式
